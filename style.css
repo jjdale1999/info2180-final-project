@@ -1,0 +1,16 @@
+header{
+    background-color: black;
+    color: white;
+}
+
+#maincontent input{
+    border-radius: 5px;
+    background-color: rgb(247,247,247);
+}
+#nusubmit{
+    border-radius:3px;
+    background-color: rgb(27,106,198);
+    color:white;
+    padding:10px;
+    width:150px;
+}
