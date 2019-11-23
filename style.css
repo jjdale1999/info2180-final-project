@@ -1,7 +1,8 @@
 body {
     display: grid;
-    grid-template-rows: auto 500px;
+    grid-template-rows: auto 55em;
     grid-gap: 10px;
+    
 }
 
 header {
@@ -22,6 +23,7 @@ nav {
     grid-column-start: 1;
     background-color: rgb(184, 180, 180);
     padding-left: 10px;
+    font-size: 25px;
 
 }
 
