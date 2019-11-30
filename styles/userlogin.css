@@ -1,0 +1,101 @@
+body {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 5px;
+    background-color: grey;
+}
+
+header{
+    grid-row-start: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    grid-row-start: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 75px auto;
+    border: 5px solid black;
+    border-radius: 20px;
+    background-color: blue;
+    color: black;
+    height: 500px;
+    width: 400px;
+}
+
+#logintext{
+    grid-row-start: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#form{
+    grid-row-start: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: grid;
+    grid-template-rows: auto auto;
+    border: 5px solid grey;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: black;
+    height: 350px;
+    width: 250px;
+}
+
+#image{
+    grid-row-start: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#input {
+    grid-row-start: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginImage{
+    height: 90px;
+    width: 90px;
+}
+
+#BDZ {
+    height: 125px;
+    width: 175px;
+}
+
+input {
+    height: 25px;
+    border-radius: 5px;
+}
+
+button {
+    border-color: black;
+    background-color: blue;
+    color: white;
+    height: 25px;
+    width: 175px;
+    border-radius: 5px;
+}
+
+a{
+    color: white;
+}

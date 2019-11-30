@@ -8,7 +8,7 @@ window.onload = function() {
     function login() {
         event.preventDefault();
         httpRequest = new XMLHttpRequest();
-        var url = "tracker.php";
+        var url = "scripts/tracker.php";
         httpRequest.onreadystatechange = processLogin;
         httpRequest.open('POST', url);
         httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
