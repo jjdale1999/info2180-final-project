@@ -1,6 +1,6 @@
 body {
     display: grid;
-    grid-template-rows: auto 55em;
+    grid-template-rows: auto 100%;
     grid-gap: 10px;
     
 }
@@ -24,9 +24,16 @@ nav {
     background-color: rgb(184, 180, 180);
     padding-left: 10px;
     font-size: 25px;
-
+    position: absolute;
+    height: 85%;
+    width: 10%;
+    
 }
 
+
+#result {
+    grid-column-start: 2;
+}
 #result {
     grid-column-start: 2;
 }
@@ -38,4 +45,22 @@ nav {
     width: 75px;
     border-radius: 5px;
     border: rgb(9, 90, 165);
+}
+#userlogh1{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font: white
+    background-color: black;
+}
+
+#row1{
+    background: black;
+    color: white
+}
+
+#row2{
+    align-content: center;
+    text-align: center;
+    align-content: center;
 }
