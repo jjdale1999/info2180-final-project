@@ -1,4 +1,5 @@
 window.onload = function() {
+    var httpRequest;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var loginBtn = document.getElementById("loginBtn");
@@ -21,7 +22,7 @@ window.onload = function() {
                 var response = httpRequest.responseText;
                 if(response) {
                     alert("Login successful");
-                    window.location = "Issues.html";
+                    window.location = "index.html";
                 }
             } else {
                 alert('There was a problem with the request.');

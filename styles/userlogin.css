@@ -2,7 +2,7 @@ body {
     display: grid;
     grid-template-rows: auto auto;
     grid-gap: 5px;
-    background-color: grey;
+    background: linear-gradient(#063cb1, white, #063cb1);
 }
 
 header{
@@ -24,8 +24,8 @@ main {
     grid-template-rows: 75px auto;
     border: 5px solid black;
     border-radius: 20px;
-    background-color: blue;
-    color: black;
+    background: linear-gradient(black, grey, white);
+    color: white;
     height: 500px;
     width: 400px;
 }
@@ -48,7 +48,7 @@ main {
 form{
     display: grid;
     grid-template-rows: auto auto;
-    border: 5px solid grey;
+    border: 10px solid white;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     background-color: black;
@@ -77,10 +77,6 @@ form{
     width: 90px;
 }
 
-#BDZ {
-    height: 125px;
-    width: 175px;
-}
 
 input {
     height: 25px;
@@ -94,8 +90,4 @@ button {
     height: 25px;
     width: 175px;
     border-radius: 5px;
-}
-
-a{
-    color: white;
 }

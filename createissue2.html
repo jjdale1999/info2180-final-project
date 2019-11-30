@@ -3,15 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Create Issue</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="styles/createissue2.css" type = "text/css">
     </head>
 
     <body>
+        <div id = "header">
+            <header>Create Issue</header>
+        </div>
+        
 
-    <form action = "/" method = "post">
+    <form action = "" method = "post">
         <div id = "title">
             <p>
                 <label for = "title">Title</label>
@@ -20,49 +24,48 @@
         </div>
         
         <div id = "description">
-                <p>
-                    <label for = "description">Description</label>
-                    <input type = "text" id = "description" name = "description">
+            <p>
+                <label for = "description">Description</label>
+                <input type = "text area" id = "description" name = "description">
         
-                </p>
+            </p>
+        </div>
         
-                <div id = "assignedTo">
-                    <p>
-                        <label for = "assignedTo">Assigned To</label>
-                        <select name = "assignedTo">
-                            <option></option>
-                            <option></option>
-                            <option></option>
-                            <option></option>
-                            <option></option>
-                        </select>
-                    </p>
-              </div>
+        <div id = "assignedTo">
+            <p>
+                <label for = "assignedTo">Assigned To</label>
+                <select name = "assignedTo" placeholder= "Marcia Brady">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </p>
+        </div>
         
-              <div id = "type">
-                  <p>
-                      <label for = "type">Type</label>
-                      <select name = "type">
-                          <option></option>
-                          <option></option>
-                          <option></option>
-                          <option></option>
-                      </select>     
-                  </p>
-              </div>
+        <div id = "type">
+            <p>
+                <label for = "type">Type</label>
+                <select name = "type" placeholder = "Bug">
+                    <option>Bug</option>
+                    <option>Proposal</option>
+                    <option>Task</option>
+                </select>     
+            </p>
+        </div>
         
-              <div id = "priority">
-                  <p>
-                      <label for = "priority">Priority</label>
-                      <select name = "priority">
-                          <option></option>
-                          <option></option>
-                          <option></option>
-                          <option></option>
-                      </select>
-                  </p>
+        <div id = "priority">
+            <p>
+                <label for = "priority">Priority</label>
+                <select name = "priority" placeholder = "Major">
+                    <option>Minor</option>
+                    <option>Major</option>
+                    <option>Critical</option>
+                </select>
+            </p>
 
-              </div>
+        </div>
         </form>
       
         
