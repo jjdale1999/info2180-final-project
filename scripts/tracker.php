@@ -49,7 +49,6 @@ if(isset($_GET)){
         getIssueInfo();
     }
     
-    
 }
 
 //function to query and show query info on issues
@@ -105,14 +104,13 @@ function checkemail($email){
 //home view
 function issuestable($results){
     $tableheads="<button> Create New User </button>".
-                    "<h1> Issues <h1>".
-                    "<table> 
-                            <th>Title</th>
-                            <th>Type</th> 
-                            <th>Status</th> 
-                            <th>Assigned To</th>
-                            <th>Created</th>
-                            ";
+                "<h1> Issues <h1>".
+                "<table> 
+                    <th>Title</th>
+                    <th>Type</th> 
+                    <th>Status</th> 
+                    <th>Assigned To</th>
+                    <th>Created</th>";
         foreach($results as $row){
             $tableheads.= "<tr>". "
                                 <td>".$row['id'].$row['title']."</td>".
