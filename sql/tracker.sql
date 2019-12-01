@@ -35,7 +35,7 @@ updated char(20) DEFAULT NULL
 insert into issueInfo values("2","My home page won't load","So I'm doing this webdev project and once I click my homepage, its all code everywhere","Bug","Low","OPEN","admin@bugme.com","corey@fixme.net","12/01/2019","12/01/2019");
 insert into issueInfo values("100","XSS Vulnerability in Add User Form","XSS is highly state to the art and blah blah blah","Bug","Medium","OPEN","rahmoi.jnr@gmail.com","fixmylife@helpme.net","12/01/2019","12/01,2019");
 insert into issueInfo values("23","Location Service isn't working","Well i was going to back road to get some and i wasn't entirely sure where to drive so ","Bug","OPEN","TAGM@woii.com","somewhere@something.com","12/01/2019","12/01/2019");
-insert into issueInfo values("#16","Setup Logger","We gonna log your setup basically","Proposal","Low","CLOSEDS","Marsha Brady","Tom Brady","12/01/2019","12/01/2019");
+insert into issueInfo values("#16","Setup Logger","We gonna log your setup basically","Proposal","Low","CLOSED","Marsha Brady","Tom Brady","12/01/2019","12/01/2019");
 
 /*HI MY NAME IS COREY HOW CAN I BE OF ASSISTANCE TODAY?*/
 /* more dummy values the ones in the pdf */

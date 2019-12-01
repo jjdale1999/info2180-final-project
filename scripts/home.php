@@ -43,13 +43,15 @@ if(isset($_GET)){
             if($something=="myticket"){
                 $stmt = $conn->query("SELECT * FROM issueInfo WHERE assigned_to=$emaillog ");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                
                 issuestable($results); // echos the table to html
                 
             
             } 
             //if they click open tickets
-            elseif($something=="opentickets"){
-                $stmt = $conn->query("SELECT * FROM issueInfo WHERE stat='open' ");
+            elseif($something=="open"){
+                echo"its open";
+                $stmt = $conn->query("SELECT * FROM issueInfo WHERE stat='OPEN' ");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 issuestable($results);
             }
@@ -71,12 +73,7 @@ if(isset($_GET)){
         }
     //home view , figure 2
     function issuestable($results){
-        $tableheads="<div><h1> Issues <h1> ".
-                    "<button> Create New User </button></div>".
-                    "<div> <label>Filterby:</label>
-                    <button>ALL</button>
-                    <button> OPEN </button>
-                    <button> MY TICKETS </button> </div>".
+        $tableheads=
                     "<div id='table'><table> 
                         <th>Title</th>
                         <th>Type</th> 

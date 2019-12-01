@@ -4,11 +4,34 @@ window.onload = function() {
     var adduserLink = document.getElementById("adduser");
     var newissueLink = document.getElementById("newissue");
     var logoutLink = document.getElementById("logout");
+    var allbtn = document.getElementById("allbtn");
+    var openbtn = document.getElementById("openbtn");
     loadHome();
     homeLink.onclick = loadHome;
     adduserLink.onclick = loadAddUser;
     newissueLink.onclick = loadNewIssue;
     logoutLink.onclick = loadLogout;
+    allbtn.onclick=queryall;
+    openbtn.onclick=queryopen;
+    //just testing
+   
+    function queryall(){
+        event.preventDefault();
+        let page = "home.php";
+        let stateObj = {page: "home"};
+        history.pushState(stateObj, null, "home");
+        requestContent("scripts/"+page+"?home='all'");
+        document.title = 'BugMe Tracker | Home';
+    }
+
+    function queryopen(){
+        event.preventDefault();
+        let page = "home.php";
+        let stateObj = {page: "home"};
+        history.pushState(stateObj, null, "home");
+        requestContent("scripts/"+page+"?home='open'");
+        document.title = 'BugMe Tracker | Home';
+    }
 
     function loadHome() {
         event.preventDefault();
