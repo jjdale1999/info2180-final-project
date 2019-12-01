@@ -58,7 +58,7 @@ window.onload = function() {
 
     window.onpopstate = function(event) {
         let page = history.state.page;
-        let filename = page + '.php';
+        let filename = page;
     
         // load the page and put it's contents in the main element.
         requestContent(filename);

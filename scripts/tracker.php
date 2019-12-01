@@ -48,6 +48,17 @@ if(isset($_GET)){
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         getIssueInfo();
     }
+
+    //this is for the drop down box for options with all users names
+    if($_GET['createissue']){
+        $stmt = $conn->query("SELECT * FROM userInfo");
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $options ="";
+        foreach($results as $row){
+            $options.= "<option>".$row['firstname']." ".$row['lastname']."</option>";
+        }
+        echo $options;
+    }
     
 }
 
@@ -105,13 +116,13 @@ function checkemail($email){
 
 //home view , figure 2
 function issuestable($results){
-    $tableheads="<button> Create New User </button>".
-                "<h1> Issues <h1>".
-                "<label>Filterby:</label>
+    $tableheads="<div><h1> Issues <h1> ".
+                "<button> Create New User </button></div>".
+                "<div> <label>Filterby:</label>
                 <button>ALL</button>
                 <button> OPEN </button>
-                <button> MY TICKETS </button>".
-                "<table> 
+                <button> MY TICKETS </button> </div>".
+                "<div id='table'><table> 
                     <th>Title</th>
                     <th>Type</th> 
                     <th>Status</th> 
@@ -119,7 +130,7 @@ function issuestable($results){
                     <th>Created</th>";
         foreach($results as $row){
             $tableheads.= "<tr>". "
-                                <td>".$row['id'].$row['title']."</td>".
+                                <td>"."#".$row['id']."<a href=''>".$row['title']."</a></td>".
                                 "<td>".$row['type']."</td>".
                                 "<td>".$row['stat']."</td>".
                                 "<td>".$row['assigned_to']."</td>".
@@ -127,7 +138,7 @@ function issuestable($results){
                             "</tr>";
         }
 
-        $tableheads.="</table>";
+        $tableheads.="</table></div>";
         echo $tableheads;
 }
 function validateHashPw($pword){

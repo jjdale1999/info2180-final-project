@@ -37,4 +37,4 @@ updated char(20) DEFAULT NULL,
 
 
 
-insert into xuserInfo values(1,"lol","lol",$hashedPw,'admin@bugme.com',"lol");
+insert into userInfo values(1,"lol","lol",$hashedPw,'admin@bugme.com',"lol");
