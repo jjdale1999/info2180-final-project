@@ -52,30 +52,49 @@ if(isset($_GET)){
     
 }
 
-function getIssueInfo(){
-
+//function to query and show query info on issues
+function getIssueInfo($results){
+   $view="<h1>". $results['title']."</h1>".
+        "Issue #".$results['id'].
+        "<p>".$results['descript']."</p>".
+        ">  Issue created on ".$results['created']."at"."".
+        "by ".$results['created_by'].
+        ">  Last updated on ".$results['updated']."at"."";
+    //this div is the side info to the right of the view issue page
+    $view.="<div>". "Assigned To <br>".$results['assigned_to']."<br> <br>". 
+            "Type: <br>".$results['typ']."<br> <br>".
+            "Priority: <br>".$results['pr']."<br> <br>".
+            "Status: <br>".$results['stat']."<br><br>".
+            "</div>";
+    $view.="<button>Mark as Closed </button>".
+            "<button>Matk in Progress </button>";
 }
 
+//function to show all issues in a table
 function getIssues($results,$emaillog,$passwordlog,$something){
     foreach ($results as $row){
         if($row['email']==$emaillog){
             if($something=="myticket"){
                 $stmt = $conn->query("SELECT * FROM issueInfo WHERE assigned_to=$emaillog ");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                issuestable($results);
+                issuestable($results); // echos the table to html
                 
                
             } elseif($something=="opentickets"){
                 $stmt = $conn->query("SELECT * FROM issueInfo WHERE stat='open' ");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                issuestable($results);
             }elseif($something=="all"){
                 $stmt = $conn->query("SELECT * FROM issueInfo");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                issuestable($results);
     
             }       
         }
     }
 }
+
+//checks for correct format of email
 function checkemail($email){
     $test = preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", $email);
     return ($test) ? true : false;
@@ -83,29 +102,31 @@ function checkemail($email){
 
 }
 
-
+//home view
 function issuestable($results){
-    <input type =  "button">
-    $tableheads = "<html>
-                    <table> 
-                        <th>Title</th>
-                        <th>Type</th> 
-                        <th>Status</th> 
-                        <th>Assigned To</th>
-                        <th>Created</th>
-                        ";
-    
-                     
-
+    $tableheads="<html>".
+                    "<button> Create New User </button>".
+                    "<h1> Issues <h1>".
+                    "<table> 
+                            <th>Title</th>
+                            <th>Type</th> 
+                            <th>Status</th> 
+                            <th>Assigned To</th>
+                            <th>Created</th>
+                            ";
         foreach($results as $row){
-            $tableheads.= "<tr> <td>".$row['id'].$row['title']."</td>".
-                            "<td>".$row['type']."</td>".
-                            "<td>".$row['stat']."</td>".
-                            "<td>".$row['assigned_to']."</td>".
-                            "<td>".$row['created_by']."</td>"."</tr>";
+            $tableheads.= "<tr>". "
+                                <td>".$row['id'].$row['title']."</td>".
+                                "<td>".$row['type']."</td>".
+                                "<td>".$row['stat']."</td>".
+                                "<td>".$row['assigned_to']."</td>".
+                                "<td>".$row['created_by']."</td>".
+                            "</tr>";
         }
 
-        
+        $tableheads.="</table>".
+                    "</html>";
+        echo $tableheads;
 }
 function validateHashPw($pword){
     $passValid = filter_var($_POST['pword'],FILTER_SANITIZE_STRING);
