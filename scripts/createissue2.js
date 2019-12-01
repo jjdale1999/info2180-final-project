@@ -10,7 +10,9 @@ window.onload = ()=> {
         let send = true;
         event.preventDefault();
 
-        if()
+        if(){
+            
+        }
 
 
     });

@@ -51,16 +51,17 @@ if(isset($_GET)){
     
 }
 
+//This should be figure 4
 //function to query and show query info on issues
 function getIssueInfo($results){
    $view="<h1>". $results['title']."</h1>".
         "Issue #".$results['id'].
-        "<p>".$results['descript']."</p>".
+        "<div id='info'> <p>".$results['descript']."</p>".
         ">  Issue created on ".$results['created']."at"."".
         "by ".$results['created_by'].
-        ">  Last updated on ".$results['updated']."at"."";
+        ">  Last updated on ".$results['updated']."at".""."</div>";
     //this div is the side info to the right of the view issue page
-    $view.="<div>". "Assigned To <br>".$results['assigned_to']."<br> <br>". 
+    $view.="<div id='rightbox'>". "Assigned To <br>".$results['assigned_to']."<br> <br>". 
             "Type: <br>".$results['typ']."<br> <br>".
             "Priority: <br>".$results['pr']."<br> <br>".
             "Status: <br>".$results['stat']."<br><br>".
@@ -70,6 +71,7 @@ function getIssueInfo($results){
 }
 
 //function to show all issues in a table
+//$something is based on what button they click on for filter by 
 function getIssues($results,$emaillog,$passwordlog,$something){
     foreach ($results as $row){
         if($row['email']==$emaillog){
@@ -101,10 +103,14 @@ function checkemail($email){
 
 }
 
-//home view
+//home view , figure 2
 function issuestable($results){
     $tableheads="<button> Create New User </button>".
                 "<h1> Issues <h1>".
+                "<label>Filterby:</label>
+                <button>ALL</button>
+                <button> OPEN </button>
+                <button> MY TICKETS </button>".
                 "<table> 
                     <th>Title</th>
                     <th>Type</th> 

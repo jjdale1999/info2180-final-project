@@ -48,8 +48,11 @@ window.onload = function() {
     }
 
     function requestContent(filename) {
-        httpRequest = new XM
-        document.getElementById("result").innerHTML = filename;
+        httpRequest = new XMLHttpRequest();
+        var url = filename;
+        httpRequest.onreadystatechange = loadPage;
+        httpRequest.open('GET', url);
+        httpRequest.send();
     }
 
 
@@ -64,4 +67,16 @@ window.onload = function() {
         document.title = 'BugMe Tracker | ' + page;
     
       };
+
+    function loadPage() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                var response = httpRequest.responseText;
+                document.getElementById("result").innerHTML = response;
+                
+            } else {
+                alert('There was a problem with the request.');
+            }
+        }
+    }
 }
