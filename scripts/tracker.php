@@ -42,18 +42,27 @@ if(isset($_GET)){
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         getIssues($results,$emaillog,$passwordlog,$something);
     }
-    
+    if($_GET['title']){
+        $title=$_GET['title'];
+        $stmt = $conn->query("SELECT * FROM issueInfo WHERE title=$title");
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        getIssueInfo();
+    }
     
     
 }
 
+function getIssueInfo(){
+
+}
+
 function getIssues($results,$emaillog,$passwordlog,$something){
     foreach ($results as $row){
-        if($row['email']==$emaillog && $row['pword']==$passwordlog){
+        if($row['email']==$emaillog){
             if($something=="myticket"){
                 $stmt = $conn->query("SELECT * FROM issueInfo WHERE assigned_to=$emaillog ");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                issuestable();
+                issuestable($results);
                 
                
             } elseif($something=="opentickets"){
@@ -62,6 +71,7 @@ function getIssues($results,$emaillog,$passwordlog,$something){
             }elseif($something=="all"){
                 $stmt = $conn->query("SELECT * FROM issueInfo");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
             }       
         }
     }
@@ -70,21 +80,32 @@ function checkemail($email){
     $test = preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/", $email);
     return ($test) ? true : false;
 
-   //stop move mi nuh xD
-   //MI SEH STOP MOVE MI
-//    looooooool
+
 }
 
-function issuestable(){
-    echo"<html>
-            <table> 
-                <th>Title</th>
-                <th>Type</th> 
-                <th>Status</th> 
-                <th>Assigned To</th>
-                <tr>
-                            
-                </tr>";
+
+function issuestable($results){
+    <input type =  "button">
+    $tableheads = "<html>
+                    <table> 
+                        <th>Title</th>
+                        <th>Type</th> 
+                        <th>Status</th> 
+                        <th>Assigned To</th>
+                        <th>Created</th>
+                        ";
+    
+                     
+
+        foreach($results as $row){
+            $tableheads.= "<tr> <td>".$row['id'].$row['title']."</td>".
+                            "<td>".$row['type']."</td>".
+                            "<td>".$row['stat']."</td>".
+                            "<td>".$row['assigned_to']."</td>".
+                            "<td>".$row['created_by']."</td>"."</tr>";
+        }
+
+        
 }
 function validateHashPw($pword){
     $passValid = filter_var($_POST['pword'],FILTER_SANITIZE_STRING);
