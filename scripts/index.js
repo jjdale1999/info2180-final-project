@@ -4,7 +4,7 @@ window.onload = function() {
     var adduserLink = document.getElementById("adduser");
     var newissueLink = document.getElementById("newissue");
     var logoutLink = document.getElementById("logout");
-
+    loadHome();
     homeLink.onclick = loadHome;
     adduserLink.onclick = loadAddUser;
     newissueLink.onclick = loadNewIssue;

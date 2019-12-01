@@ -11,7 +11,7 @@ window.onload = function() {
         httpRequest = new XMLHttpRequest();
         var url = "scripts/home.php";
         httpRequest.onreadystatechange = processLogin;
-        httpRequest.open('POST', url);
+        httpRequest.open('GET', url);
         httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         httpRequest.send('emaillog=' + encodeURIComponent(email) + "&password=" + encodeURIComponent(password));
     }

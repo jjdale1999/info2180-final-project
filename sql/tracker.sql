@@ -13,6 +13,8 @@ CREATE TABLE userInfo (
     email char(40) NOT NULL,
     date_joined char(10) NOT NULL
 );
+insert into userInfo values(1,"lol","lol","password123",'admin@bugme.com',"lol");
+
 /*  CREATION OF idInfo Table*/
 
 DROP TABLE IF EXISTS issueInfo;
@@ -34,4 +36,3 @@ updated char(20) DEFAULT NULL
 
 
 
-insert into userInfo values(1,"lol","lol","admin",'admin@bugme.com',"lol");
