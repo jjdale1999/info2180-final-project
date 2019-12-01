@@ -7,83 +7,76 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles/createissue2.css" type = "text/css">
+        <script type = "text/javascript" src = "scripts/createissue2.js"></script>
     </head>
 
     <body>
-        <div id = "header">
-            <header>Create Issue</header>
-        </div>
+       
+    <div id = "header1">
+         <header>Create Issue</header>
+     </div>
         
+    <div id = "createissue2">
+         <form action = "/scripts/tracker.php" method = "post">
+            <div id = "title">
+                <p>
+                    <label for = "title">Title</label><br>
+                    <input type = "text" id = "title" name = "title"/><br>
+                </p>
+            </div>
+        
+            <div id = "description">
+                <p>
+                    <label for = "description">Description</label><br>
+                    <textarea rows="6" cols="50" id = "description" name = "description"></textarea><br>
+            
+                </p>
+             </div>
+        
+            <div id = "assignedTo">
+                <p>
+                    <label for = "assignedTo">Assigned To</label>
+                    <select name = "assignedTo" placeholder= "Marcia Brady">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </p>
+            </div>
+        
+            <div id = "type">
+                <p>
+                    <label for = "type">Type</label>
+                    <select name = "type" placeholder = "Bug">
+                        <option>Bug</option>
+                        <option>Proposal</option>
+                        <option>Task</option>
+                     </select>     
+                </p>
+            </div>
 
-    <form action = "" method = "post">
-        <div id = "title">
-            <p>
-                <label for = "title">Title</label>
-                <input type = "text" id = "title" name = "title">
-            </p>
-        </div>
-        
-        <div id = "description">
-            <p>
-                <label for = "description">Description</label>
-                <input type = "text area" id = "description" name = "description">
-        
-            </p>
-        </div>
-        
-        <div id = "assignedTo">
-            <p>
-                <label for = "assignedTo">Assigned To</label>
-                <select name = "assignedTo" placeholder= "Marcia Brady">
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                </select>
-            </p>
-        </div>
-        
-        <div id = "type">
-            <p>
-                <label for = "type">Type</label>
-                <select name = "type" placeholder = "Bug">
-                    <option>Bug</option>
-                    <option>Proposal</option>
-                    <option>Task</option>
-                </select>     
-            </p>
-        </div>
-        
-        <div id = "priority">
-            <p>
-                <label for = "priority">Priority</label>
-                <select name = "priority" placeholder = "Major">
-        <div id = "priority">
-            <p>
-                <label for = "priority">Priority</label>
-                <select name = "priority" placeholder = "Major">
+            <div id = "priority">
+                <p>
+                    <label for = "priority">Priority</label>
+                    <select name = "priority" placeholder = "Major">
+                        <option>Minor</option>
+                        <option>Major</option>
+                        <option>Critical</option>
+                    </select>
+                </p>
+            </div>
 
-        <div id = "priority">
-            <p>
-                <label for = "priority">Priority</label>
-                <select name = "priority" placeholder = "Major">
-                    <option>Minor</option>
-                    <option>Major</option>
-                    <option>Critical</option>
-                </select>
-            </p>
-        </div>
-
-        <div id = "submission">
-            <p>
-                <input type="submit" id = "submit" value="Submit"/>
-            </p>
+             <div id = "submission">
+                <p>
+                    <input type="submit" id = "submit" value="Submit"/>
+                </p>
         
-        </div>
+             </div>
         </form>
       
-        
+    </div>   
     </body>
 
 </html>

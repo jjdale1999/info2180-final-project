@@ -15,6 +15,7 @@ if(isset($_POST) && isset($_POST['fname'])){
 
     $checkedEmail=checkEmail($email);
     $hashedPw=validateHashPw($pword);
+    //for future reference, you can use password_verify('String being entered',$hashedVariableName)
     $dbEntry=$conn->query("INSERT INTO userInfo (id,firstName,lastName,pword,email,date_joined) VALUES ('$id', '$fname', '$lname', '$hashedPw', '$checkedEmail','$date')");
     
     
@@ -30,18 +31,28 @@ if(isset($_POST) && isset($_POST['title'])){
 
 }
 
-
-
-
-
 if(isset($_GET)){
+    //when login 
     if($_GET['emaillog'] && $_GET['password']){
         $emaillog=$_GET['emaillog'];
-        $passwordlog=$_GET['password'];
+        $passwordlog=$_GET['password']; //this is what i want to hash to check if it matches in the table
         $stmt = $conn->query("SELECT * FROM userInfo WHERE email=$emaillog and  pword=$passwordlog");
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        getIssues($results,$emaillog,$passwordlog,$something);
+        $something="";
+        //if the length is equal to one then 
+        if(sizeof($result)==1){
+            getIssues($emaillog,$passwordlog,$something);
+        }
+           
     }
+    //when home is clicked
+    if($_GET['home']){
+        $something="";
+        getIssues($emaillog,$passwordlog,'');
+    }
+
+
+    //when the title a tag is clicked 
     if($_GET['title']){
         $title=$_GET['title'];
         $stmt = $conn->query("SELECT * FROM issueInfo WHERE title=$title");
@@ -83,28 +94,67 @@ function getIssueInfo($results){
 
 //function to show all issues in a table
 //$something is based on what button they click on for filter by 
-function getIssues($results,$emaillog,$passwordlog,$something){
-    foreach ($results as $row){
-        if($row['email']==$emaillog){
+function getIssues($emaillog,$passwordlog,$something){
+    // foreach ($results as $row){
+    //     if($row['email']==$emaillog){
+        //if they click my ticket 
             if($something=="myticket"){
                 $stmt = $conn->query("SELECT * FROM issueInfo WHERE assigned_to=$emaillog ");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 issuestable($results); // echos the table to html
                 
                
-            } elseif($something=="opentickets"){
+            } 
+            //if they click open tickets
+            elseif($something=="opentickets"){
                 $stmt = $conn->query("SELECT * FROM issueInfo WHERE stat='open' ");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 issuestable($results);
-            }elseif($something=="all"){
+            }
+            //if they click all
+            elseif($something=="all"){
                 $stmt = $conn->query("SELECT * FROM issueInfo");
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 issuestable($results);
     
-            }       
-        }
-    }
+            } 
+            //for after login , so home page
+            else{
+                $stmt = $conn->query("SELECT * FROM issueInfo");
+                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                issuestable($results);
+            }      
+        
+    
 }
+//home view , figure 2
+function issuestable($results){
+    $tableheads="<div><h1> Issues <h1> ".
+    "<button> Create New User </button></div>".
+    "<div> <label>Filterby:</label>
+    <button>ALL</button>
+    <button> OPEN </button>
+    <button> MY TICKETS </button> </div>".
+    "<div id='table'><table> 
+        <th>Title</th>
+        <th>Type</th> 
+        <th>Status</th> 
+        <th>Assigned To</th>
+        <th>Created</th>";
+    foreach($results as $row){
+    $tableheads.= "<tr>". "
+                    <td>"."#".$row['id']."<a href=''>".$row['title']."</a></td>".
+                    "<td>".$row['type']."</td>".
+                    "<td>".$row['stat']."</td>".
+                    "<td>".$row['assigned_to']."</td>".
+                    "<td>".$row['created_by']."</td>".
+                "</tr>";
+}
+
+$tableheads.="</table></div>";
+echo $tableheads;
+}
+
 
 //checks for correct format of email
 function checkemail($email){
@@ -114,33 +164,8 @@ function checkemail($email){
 
 }
 
-//home view , figure 2
-function issuestable($results){
-    $tableheads="<div><h1> Issues <h1> ".
-                "<button> Create New User </button></div>".
-                "<div> <label>Filterby:</label>
-                <button>ALL</button>
-                <button> OPEN </button>
-                <button> MY TICKETS </button> </div>".
-                "<div id='table'><table> 
-                    <th>Title</th>
-                    <th>Type</th> 
-                    <th>Status</th> 
-                    <th>Assigned To</th>
-                    <th>Created</th>";
-        foreach($results as $row){
-            $tableheads.= "<tr>". "
-                                <td>"."#".$row['id']."<a href=''>".$row['title']."</a></td>".
-                                "<td>".$row['type']."</td>".
-                                "<td>".$row['stat']."</td>".
-                                "<td>".$row['assigned_to']."</td>".
-                                "<td>".$row['created_by']."</td>".
-                            "</tr>";
-        }
 
-        $tableheads.="</table></div>";
-        echo $tableheads;
-}
+
 function validateHashPw($pword){
     $passValid = filter_var($_POST['pword'],FILTER_SANITIZE_STRING);
     $passConf=preg_match('/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}/',$passValid);

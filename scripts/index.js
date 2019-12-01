@@ -15,7 +15,7 @@ window.onload = function() {
         let page = "home.php";
         let stateObj = {page: "home"};
         history.pushState(stateObj, null, "home");
-        requestContent("scripts/"+page);
+        requestContent("scripts/"+page+"?home='home'");
         document.title = 'BugMe Tracker | Home';
 
     }

@@ -9,11 +9,11 @@ window.onload = function() {
     function login() {
         event.preventDefault();
         httpRequest = new XMLHttpRequest();
-        var url = "scripts/tracker.php";
+        var url = "scripts/home.php";
         httpRequest.onreadystatechange = processLogin;
         httpRequest.open('POST', url);
         httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        httpRequest.send('email=' + encodeURIComponent(email) + "&password=" + encodeURIComponent(password));
+        httpRequest.send('emaillog=' + encodeURIComponent(email) + "&password=" + encodeURIComponent(password));
     }
 
     function processLogin() {
