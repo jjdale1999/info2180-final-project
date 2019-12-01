@@ -104,8 +104,7 @@ function checkemail($email){
 
 //home view
 function issuestable($results){
-    $tableheads="<html>".
-                    "<button> Create New User </button>".
+    $tableheads="<button> Create New User </button>".
                     "<h1> Issues <h1>".
                     "<table> 
                             <th>Title</th>
@@ -124,8 +123,7 @@ function issuestable($results){
                             "</tr>";
         }
 
-        $tableheads.="</table>".
-                    "</html>";
+        $tableheads.="</table>";
         echo $tableheads;
 }
 function validateHashPw($pword){
