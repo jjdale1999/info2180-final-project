@@ -58,10 +58,10 @@ window.onload = function() {
 
     window.onpopstate = function(event) {
         let page = history.state.page;
-        let filename = page;
+        let filename = page + ".php";
     
         // load the page and put it's contents in the main element.
-        requestContent(filename);
+        requestContent("scripts/"+filename);
     
         // Update the page title in the browser tab
         document.title = 'BugMe Tracker | ' + page;
