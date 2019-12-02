@@ -6,30 +6,54 @@ window.onload = function() {
     var logoutLink = document.getElementById("logout");
     var allbtn = document.getElementById("allbtn");
     var openbtn = document.getElementById("openbtn");
+    var mytickbtn = document.getElementById("myticketsbtn");
+    var titleinfo = document.getElementById('id');
+    
+    
+    
     loadHome();
     homeLink.onclick = loadHome;
     adduserLink.onclick = loadAddUser;
     newissueLink.onclick = loadNewIssue;
     logoutLink.onclick = loadLogout;
     allbtn.onclick=queryall;
-    openbtn.onclick=queryopen;
+    openbtn.onclick = queryopen;
+    mytickbtn.onclick=querymyticket;
+    titleinfo.onclick=gettitleinfo;
+    
     //just testing
-   
+    function gettitleinfo(){
+        event.preventDefault();
+        let page = "home.php";
+        let stateObj = {page: "home"};
+        history.pushState(stateObj, null, "home");
+        requestContent("scripts/"+page+"?id=");
+        document.title = 'BugMe Tracker | Home';
+    }
+    function querymyticket(){
+        event.preventDefault();
+        let page = "home.php";
+        let stateObj = {page: "home"};
+        history.pushState(stateObj, null, "home");
+        requestContent("scripts/"+page+"?home=myticket");
+        document.title = 'BugMe Tracker | Home';
+    }
+
     function queryall(){
         event.preventDefault();
         let page = "home.php";
         let stateObj = {page: "home"};
         history.pushState(stateObj, null, "home");
-        requestContent("scripts/"+page+"?home='all'");
+        requestContent("scripts/"+page+"?home=all");
         document.title = 'BugMe Tracker | Home';
     }
 
-    function queryopen(){
+    function queryopen() {
         event.preventDefault();
         let page = "home.php";
         let stateObj = {page: "home"};
         history.pushState(stateObj, null, "home");
-        requestContent("scripts/"+page+"?home='open'");
+        requestContent("scripts/"+page+"?home=open");
         document.title = 'BugMe Tracker | Home';
     }
 
@@ -38,7 +62,7 @@ window.onload = function() {
         let page = "home.php";
         let stateObj = {page: "home"};
         history.pushState(stateObj, null, "home");
-        requestContent("scripts/"+page+"?home='home'");
+        requestContent("scripts/"+page+"?home=home");
         document.title = 'BugMe Tracker | Home';
 
     }
@@ -63,11 +87,13 @@ window.onload = function() {
 
     function loadLogout() {
         event.preventDefault();
+        window.location = "index.html";
+        /*
         let page = "logout.php";
         let stateObj = {page: "logout"};
         history.pushState(stateObj, null, "logout");
         requestContent("scripts/"+page);
-        document.title = 'BugMe Tracker | Logout';
+        document.title = 'BugMe Tracker | Logout';*/
     }
 
     function requestContent(filename) {

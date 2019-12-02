@@ -17,18 +17,21 @@
                 <a id = "newissue" href="scripts/newissue.php"><h5><img id="newimg" src="img/createissue.png" alt="create issue icon">New Issue</h5></a>
                 <a id = "logout" href="scripts/logout.php"><h5><img id="logoutimg" src="img/logout.jpg" alt="logout icon">Logout</h5></a>
             </nav>
-            <div><h1> Issues <h1> 
-                <button> Create New User </button></div>
-                <div> <label>Filterby:</label>
-                <button id='allbtn'>ALL</button>
-                <button id='openbtn'> OPEN </button>
-                <button id='myticketsbtn'> MY TICKETS </button>
-              
             
-            </div>
-              <div id = "result">
+            <div id="container">
+                <div id="sub">
+                    <h1> Issues </h1> 
+                    <input type='button'> Create New User </input>
+                    <label>Filterby:</label>
+                    <a id="openbtn" href="scripts/home.php">OPEN</a>
+                    <a id="allbtn" href="scripts/home.php">ALL</a>
+                    <a id="myticketsbtn" href="scripts/home.php">My Tickets</a>
+                </div>
+                
+                <div id = "result">
                 
                 </div>
+            </div>
             
         </main>
     </body>

@@ -1,9 +1,7 @@
 body {
     display: grid;
     grid-template-rows: auto 100%;
-    grid-gap: 0px;
-
-    
+    grid-gap: 0px;    
 }
 
 header {
@@ -16,7 +14,7 @@ header {
 main {
     grid-row-start: 2;
     display: grid;
-    grid-template-columns: 160px auto;
+    grid-template-columns: auto auto;
     grid-gap: 0px;
 }
 
@@ -27,13 +25,25 @@ nav {
     font-size: 25px;
     position: absolute;
     height: 81%;
-    width: 11%;
+    width: 100px;
     
 }
 
 
-#result {
+#container {
     grid-column-start: 2;
+    grid-template-rows: auto auto;
+    grid-gap: 0px;
+}
+
+#sub {
+    grid-row-start: 1;
+    
+
+}
+
+#result {
+    grid-row-start: 2;
 }
 
 img{
