@@ -17,18 +17,22 @@
             
             </div>
             <div id="maincontent">
-                <h2> Create Issues</h2>
-                <label>Title</label>
-                <input id="title">
-                <label>Description</label>
-                <input id="description">
-                <label>Assigned To</label>
-                <input id="assignedto" placeholder="Marcia Brady">
-                <label>Type</label>
-                <input id="type" placeholder="Bug">
-                <label>Priority</label>
-                <input id="priority" placeholder="Major">
-                <button> Submit</button>
+                <form action="scripts/tracker.php" method="POST">
+
+                        <h2> Create Issues</h2>
+                        <label>Title</label>
+                        <input id="title" name='title'/>
+                        <label>Description</label>
+                        <input id="description" name='descr'/>
+                        <label>Assigned To</label>
+                        <input id="assignedto" placeholder="Marcia Brady" name='assigned'/>
+                        <label>Type</label>
+                        <input id="type" placeholder="Bug" name='types'>
+                        <label>Priority</label>
+                        <input id="priority" placeholder="Major" name='priority'/>
+                        <button> Submit</button>
+
+                </form>
             </div>
             
         </div>

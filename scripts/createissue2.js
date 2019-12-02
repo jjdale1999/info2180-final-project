@@ -19,8 +19,7 @@ window.onload = ()=> {
 
         if(title.value.length === 0){
             alert("Please add a title!");
-//sets borederder to to red
-            //Iknow this is raunchy.. just testing it out
+
             title.style.backgroundColor = "red";
             send = false;
 
@@ -52,6 +51,6 @@ window.onload = ()=> {
             break;
         }
 
-
+        
     }
 }
