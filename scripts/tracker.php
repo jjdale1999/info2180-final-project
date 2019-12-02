@@ -15,7 +15,7 @@ if(isset($_POST) && isset($_POST['fname'])){
     //for future reference, you can use password_verify('String being entered',$hashedVariableName)
     $dbEntry=$conn->query("INSERT INTO userInfo (id,firstName,lastName,pword,email,date_joined) VALUES ('$id', '$fname', '$lname', '$hashedPw', '$checkedEmail','$date')");
     
-    
+    header('Location: ../index.html');
 }
 
 
@@ -27,7 +27,7 @@ if(isset($_POST) && isset($_POST['title'])){
   $priority= filter_var($_POST['priority'],FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     $dbEntry = $conn->query("INSERT INTO issueInfo (title,descr,assigned,types,priority) VALUES ('$title','$desc','$assignedTo','$type','$priority' )");
-
+    header('Location: ../index.html');
 }
 
 
