@@ -14,18 +14,20 @@
                 <a>Logout</a>
             
             </div>
-            <div id="maincontent">
+            <form action='scripts/adduser.php' method='POST'id="maincontent">
                 <h2> New User</h2>
                 <label>Firstname</label><br>
-                <input id="fname"><br>
+                <input id="fname" name='fname'><br>
                 <label>Lastname</label><br>
-                <input id="lname"><br>
+                <input id="lname" name='lname'><br>
                 <label>Password</label><br>
-                <input  id="pword"><br>
+                <input  id="pword" name='pword'><br>
                 <label>Email</label><br>
-                <input id="email"><br>
-                <button id="nusubmit"> Submit</button>
-            </div>
+                <input id="email" name='email'><br>
+                <button type='submit' > Submit</button>
+
+                    
+                </form>
             
         </div>
     </body>

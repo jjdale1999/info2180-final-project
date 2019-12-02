@@ -9,14 +9,14 @@ if(isset($_POST) && isset($_POST['fname'])){
     $lname = filter_var($_POST['lname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $pword = $_POST['pword'];
     $email = filter_var($_POST['email'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $id = $id+1; 
     $date=date_default_timezone_get();
 
     $checkedEmail=checkEmail($email);
     $hashedPw=validateHashPw($pword);
     //for future reference, you can use password_verify('String being entered',$hashedVariableName)
-    $dbEntry=$conn->query("INSERT INTO userInfo (id,firstName,lastName,pword,email,date_joined) VALUES ('$id', '$fname', '$lname', '$hashedPw', '$checkedEmail','$date')");
-    
+    $dbEntry=$conn->query("INSERT INTO userInfo (firstName,lastName,pword,email,date_joined) VALUES ( '$fname', '$lname', '$hashedPw', '$checkedEmail','$date')");
+    header('Location: ../index.html');
+
     
 }
 //makes sure the string entered is in the format of an email
