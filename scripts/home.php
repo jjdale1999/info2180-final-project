@@ -5,13 +5,14 @@ $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=$charset", $username, $
 
 $emaillog="";
 if(isset($_GET)){ 
-    if($_GET['home']){
+    if(isset($_GET['home'])){
+        echo"here";
         $something=$_GET['home']; 
         getIssues($something,$conn,$emaillog);
 
     } 
     //this is after the login
-    else if($_GET['emaillog'] && $_GET['password']){
+    else if(isset($_GET['emaillog']) && isset($_GET['password'])){
         $emaillog=$_GET['emaillog'];
         $passwordlog=$_GET['password']; 
         //cheks to see if the email and password  is in the table
@@ -72,7 +73,7 @@ if(isset($_GET)){
         }
     //home view , figure 2
     function issuestable($results){
-        $tableheads="<table> 
+        $tableheads="<table>
                         <th>Title</th>
                         <th>Type</th> 
                         <th>Status</th> 

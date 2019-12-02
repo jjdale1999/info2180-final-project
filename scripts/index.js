@@ -1,7 +1,6 @@
 window.onload = function() {
     var httpRequest;
     var homeLink = document.getElementById("home");
-    var adduserLink = document.getElementById("adduser");
     var newissueLink = document.getElementById("newissue");
     var logoutLink = document.getElementById("logout");
     var allbtn = document.getElementById("allbtn");
@@ -13,7 +12,7 @@ window.onload = function() {
     
     loadHome();
     homeLink.onclick = loadHome;
-    adduserLink.onclick = loadAddUser;
+    
     newissueLink.onclick = loadNewIssue;
     logoutLink.onclick = loadLogout;
     allbtn.onclick=queryall;

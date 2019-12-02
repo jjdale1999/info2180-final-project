@@ -1,91 +1,98 @@
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Create Issue</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles/createissue2.css" type = "text/css">
-        <script type = "text/javascript" src = "scripts/createissue2.js"></script>
+        <title>BugMe Issue Tracker</title>
+        <link rel = "stylesheet" type = "text/css" href = "styles/style.css">
+        <script type="text/javascript" src="scripts/index.js"></script>
     </head>
 
     <body>
-       
-    <div id = "header1">
-         <header>Create Issue</header>
-     </div>
-        
-    <div id = "createissue2">
-         <form action = "scripts/tracker.php" method = "POST">
-            <div id = "title">
-                <p>
-                    <label for = "title">Title</label><br>
-                    <input type = "text" id = "title" name = "title"/><br>
-                </p>
-            </div>
-        
-            <div id = "description">
-                <p>
-                    <label for = "description">Description</label><br>
-                    <textarea rows="7" cols="50" id = "description" name = "description"></textarea><br>
+        <header>       
+            <h1><img src="img/bug.png" alt="bug logo">BugMe Issue Tracker</h1>
+        </header>
+        <main>
+            <nav>
+                <a id="home" href="scripts/home.php"><h5><img id="homeimg" src="img/home.jpg" alt="home icon">Home</h5></a>
+                <a  href="newuser.html"><h5><img id="addimg" src="img/adduser.png" alt="add user icon">Add User</h5></a>
+                <a href="createissue2.html"><h5><img id="newimg" src="img/createissue.png" alt="create issue icon">New Issue</h5></a>
+                <a id = "logout" href="scripts/logout.php"><h5><img id="logoutimg" src="img/logout.jpg" alt="logout icon">Logout</h5></a>
+            </nav>
             
-                </p>
-             </div>
-        
-            <div id = "assignedTo">
-                <p>
-                    <label for = "assignedTo">Assigned To</label>
-                </p>
-
-                <p>
-                    <select name = "assignedTo" placeholder= "Marcia Brady">
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                    </select>
-                </p>
+            <div id="container">
+                <div id="sub">
+                        <form action = "scripts/tracker.php" method = "POST">
+                            <div id = "title">
+                                <p>
+                                    <label for = "title">Title</label><br>
+                                    <input type = "text" id = "title" name = "title"/><br>
+                                </p>
+                            </div>
+                        
+                            <div id = "description">
+                                <p>
+                                    <label for = "description">Description</label><br>
+                                    <textarea rows="7" cols="50" id = "description" name = "description"></textarea><br>
+                            
+                                </p>
+                             </div>
+                        
+                            <div id = "assignedTo">
+                                <p>
+                                    <label for = "assignedTo">Assigned To</label>
+                                </p>
+                
+                                <p>
+                                    <select name = "assignedTo" placeholder= "Marcia Brady">
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                        <option></option>
+                                    </select>
+                                </p>
+                            </div>
+                        
+                            <div id = "type">
+                                <p>
+                                    <label for = "type">Type</label>
+                                </p>
+                
+                                <p>
+                                    <select name = "type" placeholder = "Bug">
+                                        <option>Bug</option>
+                                        <option>Proposal</option>
+                                        <option>Task</option>
+                                     </select>
+                                </p>
+                            </div>
+                
+                            <div id = "priority">
+                                <p>
+                                    <label for = "priority">Priority</label>
+                                </p>
+                
+                                <p>
+                                    <select name = "priority" placeholder = "Major">
+                                        <option>Minor</option>
+                                        <option>Major</option>
+                                        <option>Critical</option>
+                                    </select>
+                                </p>
+                            </div>
+                
+                             <div id = "submission">
+                                <p>
+                                    <input type="submit" id = "submit" value="Submit"/>
+                                </p>
+                        
+                             </div>
+                        </form>
+                </div>
+                
+                
             </div>
-        
-            <div id = "type">
-                <p>
-                    <label for = "type">Type</label>
-                </p>
-
-                <p>
-                    <select name = "type" placeholder = "Bug">
-                        <option>Bug</option>
-                        <option>Proposal</option>
-                        <option>Task</option>
-                     </select>
-                </p>
-            </div>
-
-            <div id = "priority">
-                <p>
-                    <label for = "priority">Priority</label>
-                </p>
-
-                <p>
-                    <select name = "priority" placeholder = "Major">
-                        <option>Minor</option>
-                        <option>Major</option>
-                        <option>Critical</option>
-                    </select>
-                </p>
-            </div>
-
-             <div id = "submission">
-                <p>
-                    <input type="submit" id = "submit" value="Submit"/>
-                </p>
-        
-             </div>
-        </form>
-      
-    </div>   
+            
+        </main>
     </body>
-
 </html>
