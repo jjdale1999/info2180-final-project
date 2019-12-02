@@ -1,8 +1,5 @@
 <?php
-$host = '127.0.0.1';
-$username = 'lab7_user';
-$password = 'My_Password123';
-$dbname = 'user';
+require_once info.php;
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 if(isset($_POST) && isset($_POST['fname'])){

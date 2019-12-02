@@ -25,7 +25,7 @@ window.onload = function() {
                     window.location = "index.html";
                 }
             } else {
-                alert('There was a problem with the request.');
+                // alert('There was a problem with the request.');
             }
         }
     }

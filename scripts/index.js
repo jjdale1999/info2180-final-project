@@ -124,7 +124,7 @@ window.onload = function() {
                 document.getElementById("result").innerHTML = response;
                 
             } else {
-                alert('There was a problem with the request.');
+                // alert('There was a problem with the request.');
             }
         }
     }

@@ -1,8 +1,5 @@
 <?php
-$host = '127.0.0.1';
-$username = 'lab7_user';
-$password = 'My_Password123';
-$dbname = 'users';
+require_once 'info.php';
 
 //when submit is clicked on new user page, the strings entered on new user page would
 //here then stored in the userInfo table found in the users database.
