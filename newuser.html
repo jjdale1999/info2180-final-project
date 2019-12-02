@@ -1,34 +1,46 @@
+
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <title>BugMe Issue Tracker</title>
+        <link rel = "stylesheet" type = "text/css" href = "styles/style.css">
+        <script type="text/javascript" src="scripts/newuser.js"></script>
     </head>
-    <body>
-        <header>
-            <h1> BugMe Issue Tracker</h1>
-        </header>
-        <div>
-            <div id="sidebar">
-                <a> Home</a>
-                <a>Add User</a>
-                <a>New Issue</a>
-                <a>Logout</a>
-            
-            </div>
-            <form action='scripts/adduser.php' method='POST'id="maincontent">
-                <h2> New User</h2>
-                <label>Firstname</label><br>
-                <input id="fname" name='fname'><br>
-                <label>Lastname</label><br>
-                <input id="lname" name='lname'><br>
-                <label>Password</label><br>
-                <input  id="pword" name='pword'><br>
-                <label>Email</label><br>
-                <input id="email" name='email'><br>
-                <button type='submit' > Submit</button>
 
-                    
-                </form>
+    <body>
+        <header>       
+            <h1><img src="img/bug.png" alt="bug logo">BugMe Issue Tracker</h1>
+        </header>
+        <main>
+            <nav>
+                <a id="home" href="scripts/home.php"><h5><img id="homeimg" src="img/home.jpg" alt="home icon">Home</h5></a>
+                <a  href="newuser.html"><h5><img id="addimg" src="img/adduser.png" alt="add user icon">Add User</h5></a>
+                <a id = "newissue" href="scripts/newissue.php"><h5><img id="newimg" src="img/createissue.png" alt="create issue icon">New Issue</h5></a>
+                <a id = "logout" href="scripts/logout.php"><h5><img id="logoutimg" src="img/logout.jpg" alt="logout icon">Logout</h5></a>
+            </nav>
             
-        </div>
+            <div id="container">
+                <div id="sub">
+                        <form action='scripts/adduser.php' method='POST'id="maincontent">
+                            <h2> New User</h2>
+                            <label>Firstname</label><br>
+                            <input id="fname" name='fname'><br>
+                            <label>Lastname</label><br>
+                            <input id="lname" name='lname'><br>
+                            <label>Password</label><br>
+                            <input  id="pword" name='pword'><br>
+                            <label>Email</label><br>
+                            <input id="email" name='email'><br>
+                            <button type='submit' > Submit</button>
+            
+                                
+                            </form>
+                </div>
+                
+                <div id = "result">
+                
+                </div>
+            </div>
+            
+        </main>
     </body>
 </html>
