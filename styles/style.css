@@ -1,7 +1,9 @@
 body {
     display: grid;
-    grid-template-rows: auto 100%;
-    grid-gap: 0px;    
+    grid-template-rows: auto 80.55vh;
+    grid-gap: 0px;
+
+    
 }
 
 header {
@@ -14,36 +16,20 @@ header {
 main {
     grid-row-start: 2;
     display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 0px;
+    grid-template-columns: 150px auto;
+    grid-gap: 15px;
 }
 
 nav {
     grid-column-start: 1;
-    background-color: rgb(184, 180, 180);
-    padding-left: 10px;
+    background-color: rgb(218, 213, 213);
     font-size: 25px;
-    position: absolute;
-    height: 81%;
-    width: 100px;
     
 }
 
-
-#container {
-    grid-column-start: 2;
-    grid-template-rows: auto auto;
-    grid-gap: 0px;
-}
-
-#sub {
-    grid-row-start: 1;
-    
-
-}
 
 #result {
-    grid-row-start: 2;
+    grid-column-start: 2;
 }
 
 img{
@@ -80,4 +66,299 @@ h1{
 a{ 
     color: black;
     text-decoration: none;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 850px auto;
+    grid-gap: 10px;
+
+}
+
+#one {
+    grid-column-start: 1;
+}
+
+#two {
+    grid-column-start: 2;
+}
+
+#page-details{
+    border: 2px solid rgb(167, 167, 167);
+    border-radius: 8px;
+    width: 200px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+    background-color: rgb(235, 231, 231);
+}
+
+.nospace {
+    margin-bottom: 0px;
+}
+
+#page-closed{
+    height: 35px;
+    width: 225px;
+    border-radius: 7px;
+    background-color: rgb(32, 127, 236);
+    border-color: black;
+    color: white;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+#page-inprogress{
+    height: 35px;
+    width: 225px;
+    border-radius: 7px;
+    background-color: rgb(49, 124, 49);
+    border-color: black;
+    color: white;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+#created-time {
+    color: rgb(173, 171, 171);
+}
+
+#updated-time {
+    color: rgb(173, 171, 171);
+}
+
+#page-time {
+    list-style-type: circle;
+}
+
+#adduser-firstname {
+    height: 35px;
+    width: 450px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: rgb(243, 242, 242);
+    border-color: rgb(218, 213, 213);
+    font-size: 20px;
+}
+
+#adduser-lastname {
+    height: 35px;
+    width: 450px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: rgb(243, 242, 242);
+    border-color: rgb(218, 213, 213);
+    font-size: 20px;
+}
+
+#adduser-email {
+    height: 35px;
+    width: 450px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: rgb(243, 242, 242);
+    border-color: rgb(218, 213, 213);
+    font-size: 20px;
+}
+
+#adduser-password {
+    height: 35px;
+    width: 450px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: rgb(243, 242, 242);
+    border-color: rgb(218, 213, 213);
+    font-size: 20px;
+}
+
+#adduser-submitBtn {
+    height: 35px;
+    width: 150px;
+    border-radius: 7px;
+    background-color: rgb(32, 127, 236);
+    border-color: black;
+    color: white;
+    font-size: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+#home-heading {
+    display: grid;
+    grid-template-columns: 75% auto;
+}
+
+#home-h1 {
+    grid-column-start: 1;
+}
+
+#home-createNewUserBtn {
+    grid-column-start: 2;
+    height: 35px;
+    width: 150px;
+    border-radius: 7px;
+    background-color: rgb(49, 124, 49);
+    border-color: black;
+    color: white;
+    font-size: 15px;
+}
+
+.home-buttons {
+    border: none;
+    background: none;
+    margin-left: 20px;
+}
+
+.home-active {
+    background-color: blue;
+    height: 25px;
+    color: white;
+    border-color: blue;
+    border-radius: 7px;
+    margin-left: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 1000px;
+    margin: 20px;
+}
+
+td {
+    border: 1px solid rgb(170, 169, 169);
+    text-align: left;
+    vertical-align: center;
+    padding-left: 10px;
+}
+
+th {
+    height: 35px;
+    background-color: #979494;
+    color: white;
+    border: 1px solid rgb(170, 169, 169);
+}
+
+td {
+    height: 30px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #d3d1d1;
+}
+
+a:hover {
+    color: rgb(0, 153, 255);
+}
+
+#table-status {
+    padding-left:auto;
+    padding-right: auto;
+}
+
+#status-OPEN {
+    color: white;
+    background-color: green;
+    width: fit-content;
+    border-radius: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+#status-CLOSED {
+    color: white;
+    background-color: rgb(255, 115, 0);
+    width: fit-content;
+    border-radius: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+#status-IP {
+    color: black;
+    background-color: yellow;
+    width: fit-content;
+    border-radius: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+#newissue-title {
+    height: 35px;
+    width: 450px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: rgb(243, 242, 242);
+    border-color: rgb(218, 213, 213);
+    font-size: 20px;
+}
+
+#newissue-description {
+    width: 450px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: rgb(243, 242, 242);
+    border-color: rgb(218, 213, 213);
+    font-size: 20px;
+}
+
+#newissue-assignedTo {
+    height: 35px;
+    width: 450px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: rgb(243, 242, 242);
+    border-color: rgb(218, 213, 213);
+    font-size: 20px;
+}
+
+#newissue-type {
+    height: 35px;
+    width: 450px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: rgb(243, 242, 242);
+    border-color: rgb(218, 213, 213);
+    font-size: 20px;
+}
+
+#newissue-priority {
+    height: 35px;
+    width: 450px;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    background-color: rgb(243, 242, 242);
+    border-color: rgb(218, 213, 213);
+    font-size: 20px;
+}
+
+#newissue-submit {
+    height: 35px;
+    width: 150px;
+    border-radius: 7px;
+    background-color: rgb(32, 127, 236);
+    border-color: black;
+    color: white;
+    font-size: 15px;
+}
+
+#page-title{
+    margin-bottom: 0px;
+}
+
+#page-issuenumber{
+    margin-top: 0px;
+}
+
+#page-description{
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }
